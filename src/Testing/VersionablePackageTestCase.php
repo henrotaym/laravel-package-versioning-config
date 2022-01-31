@@ -2,6 +2,7 @@
 namespace Henrotaym\LaravelPackageVersioning\Testing;
 
 use Henrotaym\LaravelHelpers\Providers\HelperServiceProvider;
+use Henrotaym\LaravelPackageVersioning\Providers\LaravelPackageVersioningServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
 use Henrotaym\LaravelTestSuite\TestSuite;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -36,7 +37,8 @@ abstract class VersionablePackageTestCase extends BaseTestCase
     protected function getDefaultServiceProviders()
     {
         return [
-            HelperServiceProvider::class
+            HelperServiceProvider::class,
+            LaravelPackageVersioningServiceProvider::class
         ];
     }
 }
