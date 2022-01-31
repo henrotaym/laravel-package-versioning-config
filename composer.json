@@ -1,6 +1,6 @@
 {
-    "name": "henrotaym/laravel-container-auto-register",
-    "description": "Auto registering classes into laravel container.",
+    "name": "henrotaym/laravel-package-versioning-config",
+    "description": "Versioning your package while registering common features.",
     "type": "library",
     "license": "MIT",
     "authors": [
