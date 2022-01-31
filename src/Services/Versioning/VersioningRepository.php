@@ -63,7 +63,6 @@ class VersioningRepository implements VersioningRepositoryContract
      */
     protected function getPackageJsonAttributes(VersionablePackageContract $package): array
     {
-        var_dump('running');
         [$error, $attributes] = $this->helpers->try(function() use ($package) { 
             return json_decode(file_get_contents($package->getPathToPackageJson()), true);
         });
