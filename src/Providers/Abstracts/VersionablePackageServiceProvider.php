@@ -4,12 +4,24 @@ namespace Henrotaym\LaravelPackageVersioning\Providers\Abstracts;
 use Henrotaym\LaravelHelpers\Contracts\HelpersContract;
 use Illuminate\Support\ServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
-use Reflection;
-use ReflectionClass;
 
 abstract class VersionablePackageServiceProvider extends ServiceProvider
 {
     use HavingPackageClass;
+
+    /**
+     * Adding this to service provider register() method.
+     * 
+     * @return void
+     */
+    abstract protected function addToRegister(): void;
+
+    /**
+     * Adding this to service provider boot() method.
+     * 
+     * @return void
+     */
+    abstract protected function addToBoot(): void;
 
     /**
      * Registering things to app.
@@ -20,6 +32,8 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
     {
         $this->bindFacade()
             ->registerConfig();
+        
+        $this->addToRegister();
     }
 
     /**
@@ -71,6 +85,8 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->makeConfigPublishable();
+
+        $this->addToBoot();
     }
 
     /**
