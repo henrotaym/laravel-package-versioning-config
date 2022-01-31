@@ -3,7 +3,7 @@ namespace Henrotaym\LaravelPackageVersioning\Tests;
 
 use Henrotaym\LaravelPackageVersioning\Package;
 use Henrotaym\LaravelPackageVersioning\Providers\LaravelPackageVersioningServiceProvider;
-use Henrotaym\LaravelTestSuite\TestSuite;
+use Henrotaym\LaravelPackageVersioning\Testing\VersionablePackageTestCase;
 
 class TestCase extends VersionablePackageTestCase
 {

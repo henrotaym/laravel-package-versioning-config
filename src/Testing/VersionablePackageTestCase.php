@@ -1,5 +1,5 @@
 <?php
-namespace Henrotaym\LaravelPackageVersioning\Tests;
+namespace Henrotaym\LaravelPackageVersioning\Testing;
 
 use Henrotaym\LaravelHelpers\Providers\HelperServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;

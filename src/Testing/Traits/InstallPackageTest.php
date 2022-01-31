@@ -1,5 +1,5 @@
 <?php
-namespace Henrotaym\LaravelPackageVersioning\Tests\Traits;
+namespace Henrotaym\LaravelPackageVersioning\Testing\Traits;
 
 /** Adding a test installing package as versioned. */
 trait InstallPackageTest
