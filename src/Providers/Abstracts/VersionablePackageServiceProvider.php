@@ -2,7 +2,6 @@
 namespace Henrotaym\LaravelPackageVersioning\Providers\Abstracts;
 
 use Henrotaym\LaravelHelpers\Contracts\HelpersContract;
-use Henrotaym\LaravelPackageVersioning\Commands\InstallVersioningPackage;
 use Illuminate\Support\ServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
 use Reflection;
@@ -71,8 +70,7 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->makeConfigPublishable()
-            ->registerCommand(InstallVersioningPackage::class);
+        $this->makeConfigPublishable();
     }
 
     /**
