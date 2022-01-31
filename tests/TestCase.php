@@ -2,7 +2,6 @@
 namespace Henrotaym\LaravelPackageVersioning\Tests;
 
 use Henrotaym\LaravelPackageVersioning\Package;
-use Henrotaym\LaravelPackageVersioning\Providers\LaravelPackageVersioningServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Testing\VersionablePackageTestCase;
 
 class TestCase extends VersionablePackageTestCase
@@ -14,8 +13,6 @@ class TestCase extends VersionablePackageTestCase
     
     public function getServiceProviders(): array
     {
-        return [
-            LaravelPackageVersioningServiceProvider::class
-        ];
+        return [];
     }
 }

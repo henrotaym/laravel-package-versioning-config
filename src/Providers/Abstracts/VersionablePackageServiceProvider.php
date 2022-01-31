@@ -31,7 +31,7 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
     protected function bindFacade()
     {
         $this->app->bind(static::getPackagePrefix(), function($app) {
-            $app->make(static::getPackageClass());
+            return $app->make(static::getPackageClass());
         });
 
         return $this;
