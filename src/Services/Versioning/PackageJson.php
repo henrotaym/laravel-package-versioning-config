@@ -67,6 +67,7 @@ class PackageJson implements PackageJsonContract
         endif;
 
         $this->attributes->scripts->postversion = "git push && git push --tags";
+        $this->attributes->scripts->commit = "git add . && gitmoji -c";
 
         return $this;
     }

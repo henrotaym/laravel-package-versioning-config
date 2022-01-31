@@ -7,14 +7,16 @@ use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
 abstract class VersionablePackageFacade extends Facade
 {
     use HavingPackageClass;
-    
+
     /**
      * Get the registered name of the component.
      *
      * @return string
+     *
+     * @throws \RuntimeException
      */
     protected static function getFacadeAccessor()
     {
-        return self::getPackagePrefix();
+        return static::getPackagePrefix();
     }
 }
