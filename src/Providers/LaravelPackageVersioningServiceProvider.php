@@ -16,11 +16,15 @@ class LaravelPackageVersioningServiceProvider extends VersionablePackageServiceP
         return Package::class;
     }
 
-    public function register()
+    protected function addToRegister(): void
     {
-        parent::register();
         $this->app->bind(PackageContract::class, Package::class);
         $this->app->bind(PackageJsonContract::class, PackageJson::class);
         $this->app->bind(VersioningRepositoryContract::class, VersioningRepository::class);
+    }
+
+    protected function addToBoot(): void
+    {
+        //
     }
 }
