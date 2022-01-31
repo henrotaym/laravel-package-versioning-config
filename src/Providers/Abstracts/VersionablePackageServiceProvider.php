@@ -1,9 +1,10 @@
 <?php
 namespace Henrotaym\LaravelPackageVersioning\Providers\Abstracts;
 
-use Henrotaym\LaravelHelpers\Contracts\HelpersContract;
 use Illuminate\Support\ServiceProvider;
+use Henrotaym\LaravelHelpers\Contracts\HelpersContract;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
+use Henrotaym\LaravelContainerAutoRegister\Services\AutoRegister\Contracts\AutoRegisterContract;
 
 abstract class VersionablePackageServiceProvider extends ServiceProvider
 {
@@ -84,9 +85,24 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->makeConfigPublishable();
+        $this->makeConfigPublishable()
+            ->registerPackageContract();
 
         $this->addToBoot();
+    }
+
+    /**
+     * Registering package contract if available.
+     * 
+     * Done in boot method to make sure every provider register method were fully loaded.
+     * 
+     * @return static
+     */
+    protected function registerPackageContract()
+    {
+        $this->app->make(AutoRegisterContract::class)->add(static::getPackageClass());
+
+        return $this;
     }
 
     /**

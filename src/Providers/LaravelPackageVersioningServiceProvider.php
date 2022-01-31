@@ -18,7 +18,6 @@ class LaravelPackageVersioningServiceProvider extends VersionablePackageServiceP
 
     protected function addToRegister(): void
     {
-        $this->app->bind(PackageContract::class, Package::class);
         $this->app->bind(PackageJsonContract::class, PackageJson::class);
         $this->app->bind(VersioningRepositoryContract::class, VersioningRepository::class);
     }

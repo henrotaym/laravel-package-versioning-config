@@ -1,6 +1,7 @@
 <?php
 namespace Henrotaym\LaravelPackageVersioning\Testing;
 
+use Henrotaym\LaravelContainerAutoRegister\Providers\LaravelContainerAutoRegisterServiceProvider;
 use Henrotaym\LaravelHelpers\Providers\HelperServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Providers\LaravelPackageVersioningServiceProvider;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
@@ -38,7 +39,8 @@ abstract class VersionablePackageTestCase extends BaseTestCase
     {
         return [
             HelperServiceProvider::class,
-            LaravelPackageVersioningServiceProvider::class
+            LaravelPackageVersioningServiceProvider::class,
+            LaravelContainerAutoRegisterServiceProvider::class
         ];
     }
 }
