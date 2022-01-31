@@ -80,7 +80,7 @@ class PackageJson implements PackageJsonContract
     public function save(): bool
     {
         [$error, $success] = $this->helpers->try(function() {
-            return file_put_contents($this->location, json_encode($this->attributes, JSON_UNESCAPED_SLASHES));
+            return file_put_contents($this->location, json_encode($this->attributes, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
         });
 
         return $error ?: $success;
