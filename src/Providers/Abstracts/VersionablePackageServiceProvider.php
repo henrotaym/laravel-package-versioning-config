@@ -5,6 +5,7 @@ use Illuminate\Support\ServiceProvider;
 use Henrotaym\LaravelHelpers\Contracts\HelpersContract;
 use Henrotaym\LaravelPackageVersioning\Traits\HavingPackageClass;
 use Henrotaym\LaravelContainerAutoRegister\Services\AutoRegister\Contracts\AutoRegisterContract;
+use ReflectionClass;
 
 abstract class VersionablePackageServiceProvider extends ServiceProvider
 {
@@ -128,6 +129,7 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
      */
     protected function getConfigPath(): string
     {
-        return $this->app->make(HelpersContract::class)->getDirectory(static::class) .'/../config/config.php';
+        $reflection = new ReflectionClass(static::class);
+        return dirname($reflection->getFileName()) .'/../config/config.php';
     }
 }
