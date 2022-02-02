@@ -1,6 +1,6 @@
 {
     "name": "laravel-package-versioning-config",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "main": "index.js",
     "repository": "git@github.com:henrotaym/laravel-package-versioning-config",
     "author": "Mathieu Henrotay <mathieu.henrotay@gmail.com>",
