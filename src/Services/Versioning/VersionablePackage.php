@@ -16,16 +16,6 @@ abstract class VersionablePackage implements VersionablePackageContract
     abstract public static function prefix(): string;
 
     /**
-     * @var VersioningRepositoryContract
-     */
-    protected $versioning_repository;
-
-    public function __construct(VersioningRepositoryContract $versioning_repository)
-    {
-        $this->versioning_repository = $versioning_repository;
-    }
-
-    /**
      * Getting path to package.json.
      * 
      * @return string
@@ -53,7 +43,17 @@ abstract class VersionablePackage implements VersionablePackageContract
      */
     public function getVersion(): string
     {
-        return $this->versioning_repository->getVersion($this);
+        return $this->getVersioningRepository()->getVersion($this);
+    }
+
+    /**
+     * Getting versioning repository.
+     * 
+     * @return VersioningRepositoryContract
+     */
+    protected function getVersioningRepository(): VersioningRepositoryContract
+    {
+        return app()->make(VersioningRepositoryContract::class);
     }
 
     /**
@@ -85,7 +85,7 @@ abstract class VersionablePackage implements VersionablePackageContract
      */
     public function install(): bool
     {
-        return $this->versioning_repository->getPackageJson($this)
+        return $this->getVersioningRepository()->getPackageJson($this)
             ->addScripts()
             ->save();
     }
