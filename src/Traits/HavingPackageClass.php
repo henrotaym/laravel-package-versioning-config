@@ -23,6 +23,6 @@ trait HavingPackageClass
      */
     public static function getPackagePrefix(): string
     {
-        return static::getPackageClass()::getPrefix();
+        return static::getPackageClass()::prefix();
     }
 }

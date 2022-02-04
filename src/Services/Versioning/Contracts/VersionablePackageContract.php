@@ -5,6 +5,13 @@ namespace Henrotaym\LaravelPackageVersioning\Services\Versioning\Contracts;
 interface VersionablePackageContract
 {
     /**
+     * Getting prefix statically.
+     * 
+     * @return string
+     */
+    public static function prefix(): string;
+
+    /**
      * Getting path to package.json.
      * 
      * @return string
