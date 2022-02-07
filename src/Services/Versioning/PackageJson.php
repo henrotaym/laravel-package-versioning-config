@@ -66,8 +66,10 @@ class PackageJson implements PackageJsonContract
             $this->attributes->scripts = new stdClass;
         endif;
 
-        $this->attributes->scripts->postversion = "git push && git push --tags";
-        $this->attributes->scripts->commit = "git add . && gitmoji -c";
+        $this->attributes->scripts->push = "git push && git push --tags";
+        $this->attributes->scripts->postversion = "npm run push";
+        $this->attributes->scripts->commit = "gitmoji -c && npm run push";
+        $this->attributes->scripts->{'commit:all'} = "git add . && npm run commit";
 
         return $this;
     }
@@ -80,7 +82,7 @@ class PackageJson implements PackageJsonContract
     public function save(): bool
     {
         [$error, $success] = $this->helpers->try(function() {
-            return file_put_contents($this->location, json_encode($this->attributes, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+            return file_put_contents($this->location, json_encode($this->attributes, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . "\n");
         });
 
         return $error ?: $success;
