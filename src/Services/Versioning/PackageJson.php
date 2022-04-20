@@ -70,6 +70,7 @@ class PackageJson implements PackageJsonContract
         $this->attributes->scripts->postversion = "npm run push";
         $this->attributes->scripts->commit = "gitmoji -c && npm run push";
         $this->attributes->scripts->{'commit:all'} = "git add . && npm run commit";
+        $this->attributes->scripts->{'version:alpha'} = "npm version prerelease --preid=alpha";
 
         return $this;
     }
