@@ -66,6 +66,11 @@ class PackageJson implements PackageJsonContract
             $this->attributes->scripts = new stdClass;
         endif;
 
+        unset($this->attributes->scripts->commit);
+        unset($this->attributes->scripts->push);
+        unset($this->attributes->scripts->{'commit:all'});
+        unset($this->attributes->scripts->{'version:alpha'});
+
         $this->attributes->scripts->postversion = "git push && git push --tags";
 
         return $this;
