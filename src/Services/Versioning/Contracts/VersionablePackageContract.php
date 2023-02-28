@@ -43,6 +43,16 @@ interface VersionablePackageContract
     public function getConfig(string $key = null);
 
     /**
+     * Setting config value.
+     * Prefix is automatically added to given key.
+     * 
+     * @param string $key key to get in config file. If none->getting whole package config.
+     * @param mixed $value
+     * @return static
+     */
+    public function setConfig(string $key = null, $value): VersionablePackageContract;
+
+    /**
      * Installing this package.
      * 
      * @return bool

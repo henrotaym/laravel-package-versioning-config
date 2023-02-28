@@ -75,7 +75,33 @@ abstract class VersionablePackage implements VersionablePackageContract
      */
     public function getConfig(string $key = null)
     {
-        return config($this->getPrefix(). ($key ? ".$key" : ''));
+        return config($this->getPrefixedKey($key));
+    }
+
+    /**
+     * Setting config value.
+     * Prefix is automatically added to given key.
+     * 
+     * @param string $key key to get in config file. If none->getting whole package config.
+     * @param mixed $value
+     * @return static
+     */
+    public function setConfig(string $key = null, $value): VersionablePackageContract
+    {
+        config([$this->getPrefixedKey($key) => $value]);
+
+        return $this;
+    }
+
+    /**
+     * Prefixing given key with package prefix.
+     * 
+     * @param string Package config key.
+     * @return string
+     */
+    protected function getPrefixedKey(?string $key): string
+    {
+        return $this->getPrefix(). ($key ? ".$key" : '');
     }
 
     /**
