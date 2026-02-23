@@ -7,3 +7,11 @@ services:
     image: "laravel-package-versioning-config-php-local"
     volumes:
       - ./:/opt/apps/app
+  bun:
+    build:
+      context: .
+      target: bun
+      dockerfile: Dockerfile
+    image: "laravel-package-versioning-config-bun-local"
+    volumes:
+      - ./:/opt/apps/app
