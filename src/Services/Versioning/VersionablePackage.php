@@ -31,7 +31,7 @@ abstract class VersionablePackage implements VersionablePackageContract
      * @param string $path
      * @return string
      */
-    protected function getPathToRoot(string $path = null): string
+    protected function getPathToRoot(?string $path = null): string
     {
         return app()->make(HelpersContract::class)->getDirectory(static::class) . "/../$path";
     }
@@ -73,7 +73,7 @@ abstract class VersionablePackage implements VersionablePackageContract
      * @param string $key key to get in config file. If none->getting whole package config.
      * @return mixed
      */
-    public function getConfig(string $key = null)
+    public function getConfig(?string $key = null)
     {
         return config($this->getPrefixedKey($key));
     }
@@ -86,7 +86,7 @@ abstract class VersionablePackage implements VersionablePackageContract
      * @param mixed $value
      * @return static
      */
-    public function setConfig(string $key = null, $value): VersionablePackageContract
+    public function setConfig(?string $key = null, $value): VersionablePackageContract
     {
         config([$this->getPrefixedKey($key) => $value]);
 

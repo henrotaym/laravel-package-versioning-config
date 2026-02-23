@@ -30,7 +30,7 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
      * 
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->bindFacade()
             ->registerConfig();
@@ -84,7 +84,7 @@ abstract class VersionablePackageServiceProvider extends ServiceProvider
      * 
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->makeConfigPublishable()
             ->registerPackageContract();

@@ -40,7 +40,7 @@ interface VersionablePackageContract
      * @param string $key key to get in config file. If none->getting whole package config.
      * @return mixed
      */
-    public function getConfig(string $key = null);
+    public function getConfig(?string $key = null);
 
     /**
      * Setting config value.
@@ -50,7 +50,7 @@ interface VersionablePackageContract
      * @param mixed $value
      * @return static
      */
-    public function setConfig(string $key = null, $value): VersionablePackageContract;
+    public function setConfig(?string $key = null, $value): VersionablePackageContract;
 
     /**
      * Installing this package.

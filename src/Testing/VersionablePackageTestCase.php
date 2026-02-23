@@ -18,7 +18,7 @@ abstract class VersionablePackageTestCase extends BaseTestCase
      * @param Application $app
      * @return array
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return array_merge($this->getDefaultServiceProviders(), $this->getServiceProviders());
     }
@@ -35,7 +35,7 @@ abstract class VersionablePackageTestCase extends BaseTestCase
      * 
      * @return array
      */
-    protected function getDefaultServiceProviders()
+    protected function getDefaultServiceProviders(): array
     {
         return [
             HelperServiceProvider::class,

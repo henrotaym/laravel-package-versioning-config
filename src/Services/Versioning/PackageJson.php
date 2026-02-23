@@ -38,7 +38,7 @@ class PackageJson implements PackageJsonContract
      * @return void
      */
     
-    public function  __construct(HelpersContract $helpers, array $attributes = [], string $location)
+    public function __construct(HelpersContract $helpers, array $attributes = [], string $location)
     {
         $this->attributes = json_decode(json_encode(count($attributes) === 0 ? new stdClass : $attributes));
         $this->location = $location;
