@@ -4,19 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fb08ec069b425f5303d0987ced89cf8",
+    "content-hash": "bd927b51bf536bd4cff1abb767744671",
     "packages": [
         {
             "name": "henrotaym/laravel-container-auto-register",
-            "version": "dev-main",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/henrotaym/laravel-container-auto-register.git",
+                "reference": "3c61ac0dcf79edfe2d83c05fa7866c19e8b0e470"
+            },
             "dist": {
-                "type": "path",
-                "url": "/opt/apps/laravel-container-auto-register",
-                "reference": "184c150f8702dc83d3e7166a855898822b4b3d1e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/henrotaym/laravel-container-auto-register/zipball/3c61ac0dcf79edfe2d83c05fa7866c19e8b0e470",
+                "reference": "3c61ac0dcf79edfe2d83c05fa7866c19e8b0e470",
+                "shasum": ""
             },
             "require": {
                 "henrotaym/laravel-helpers": "^2.0",
-                "henrotaym/laravel-package-versioning-config": "^1.0 || ^2.0",
+                "henrotaym/laravel-package-versioning-config": "^2.0",
                 "henrotaym/laravel-test-suite": "^3.0"
             },
             "require-dev": {
@@ -39,11 +45,7 @@
                     "Henrotaym\\LaravelContainerAutoRegister\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Henrotaym\\LaravelContainerAutoRegister\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -54,9 +56,11 @@
                 }
             ],
             "description": "Auto registering classes into laravel container.",
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/henrotaym/laravel-container-auto-register/issues",
+                "source": "https://github.com/henrotaym/laravel-container-auto-register/tree/v2.0.0"
+            },
+            "time": "2026-02-23T14:17:14+00:00"
         },
         {
             "name": "henrotaym/laravel-helpers",
@@ -8894,9 +8898,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],

@@ -7,4 +7,3 @@ services:
     image: "laravel-package-versioning-config-php-local"
     volumes:
       - ./:/opt/apps/app
-      - ../laravel-container-auto-register:/opt/apps/laravel-container-auto-register
